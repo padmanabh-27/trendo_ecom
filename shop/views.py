@@ -1,7 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import JsonResponse
 from .models import Product,Category
-
 def index(request):
 
     categories = Category.objects.prefetch_related("products")
@@ -80,3 +79,5 @@ def cart_data(request):
         "items": items,
         "total": total
     })
+
+
